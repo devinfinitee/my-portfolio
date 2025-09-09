@@ -1,0 +1,250 @@
+@import 'tailwindcss';
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #3b82f6;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #2563eb;
+}
+
+/* Smooth scrolling */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes glow {
+	0%,
+	100% {
+		box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+	}
+	50% {
+		box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+	}
+}
+
+.animate-fade-in-up {
+	animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-glow {
+	animation: glow 2s ease-in-out infinite;
+}
+
+/* Custom utility classes */
+.text-gradient {
+	background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.glass-effect {
+	backdrop-filter: blur(10px);
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Site background: dark navy with subtle radial gradients */
+.site-background {
+	background:
+		radial-gradient(1200px 600px at 75% 45%, rgba(59, 130, 246, 0.08), transparent 40%),
+		radial-gradient(900px 500px at 20% 70%, rgba(168, 85, 247, 0.06), transparent 35%), #0f172a;
+	color: #ffffff;
+}
+
+/* Light mode background */
+:root:not(.dark) .site-background {
+	background:
+		radial-gradient(1200px 600px at 75% 45%, rgba(99, 102, 241, 0.08), transparent 40%),
+		radial-gradient(900px 500px at 20% 70%, rgba(236, 72, 153, 0.06), transparent 35%),
+		linear-gradient(135deg, #fefefe 0%, #f1f5f9 100%);
+	color: #0f172a;
+}
+
+/* Light mode component overrides */
+:root:not(.dark) .bg-gray-800\/50 {
+	background-color: rgba(248, 250, 252, 0.8) !important;
+}
+
+:root:not(.dark) .bg-gray-700\/50 {
+	background-color: rgba(241, 245, 249, 0.9) !important;
+}
+
+:root:not(.dark) .bg-gray-700\/70 {
+	background-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+:root:not(.dark) .text-gray-300 {
+	color: #475569 !important;
+}
+
+:root:not(.dark) .text-gray-400 {
+	color: #64748b !important;
+}
+
+:root:not(.dark) .border-gray-800 {
+	border-color: #e2e8f0 !important;
+}
+
+:root:not(.dark) .bg-gray-900\/80 {
+	background-color: rgba(248, 250, 252, 0.9) !important;
+}
+
+:root:not(.dark) .border-gray-800 {
+	border-color: #e2e8f0 !important;
+}
+
+/* Light mode specific enhancements */
+:root:not(.dark) .hover\:bg-gray-700:hover {
+	background-color: #e2e8f0 !important;
+}
+
+:root:not(.dark) .hover\:text-white:hover {
+	color: #0f172a !important;
+}
+
+:root:not(.dark) .group:hover .group-hover\:text-blue-400 {
+	color: #3b82f6 !important;
+}
+
+/* Light mode button styles */
+:root:not(.dark) .bg-gray-800 {
+	background-color: #f1f5f9 !important;
+}
+
+:root:not(.dark) .text-gray-400 {
+	color: #64748b !important;
+}
+
+/* Light mode social links */
+:root:not(.dark) .hover\:text-blue-400:hover {
+	color: #3b82f6 !important;
+}
+
+/* Light mode shadows and borders */
+:root:not(.dark) .shadow-2xl {
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1) !important;
+}
+
+:root:not(.dark) .border-blue-500\/30 {
+	border-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Light mode text contrast improvements */
+:root:not(.dark) .text-white {
+	color: #0f172a !important;
+}
+
+:root:not(.dark) .text-gray-300 {
+	color: #475569 !important;
+}
+
+/* Light mode backdrop blur */
+:root:not(.dark) .backdrop-blur-md {
+	backdrop-filter: blur(12px);
+	background-color: rgba(248, 250, 252, 0.8) !important;
+}
+
+/* Enhanced animation effects */
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+@keyframes pulse-glow {
+	0%,
+	100% {
+		box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+		transform: scale(1);
+	}
+	50% {
+		box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+		transform: scale(1.05);
+	}
+}
+
+@keyframes slide-in-left {
+	0% {
+		transform: translateX(-100px) rotate(-10deg);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0) rotate(0deg);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in-right {
+	0% {
+		transform: translateX(100px) rotate(10deg);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0) rotate(0deg);
+		opacity: 1;
+	}
+}
+
+@keyframes bounce-in {
+	0% {
+		transform: scale(0.3) rotate(-180deg);
+		opacity: 0;
+	}
+	50% {
+		transform: scale(1.1) rotate(-90deg);
+		opacity: 0.8;
+	}
+	100% {
+		transform: scale(1) rotate(0deg);
+		opacity: 1;
+	}
+}
+
+/* Apply enhanced animations */
+.animate-float {
+	animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+	animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+	animation: slide-in-left 1s ease-out;
+}
+
+.animate-slide-in-right {
+	animation: slide-in-right 1s ease-out;
+}
+
+.animate-bounce-in {
+	animation: bounce-in 1.5s ease-out;
+}
