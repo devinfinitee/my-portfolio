@@ -107,53 +107,37 @@
 	}
 </script>
 
-<footer class="py-12 px-4 border-t border-gray-800">
+<footer class="py-8 sm:py-12 px-4 border-t border-gray-800 bg-gray-900/50">
 	<div class="container mx-auto max-w-6xl footer-content">
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-center">
 			<!-- Copyright -->
 			<div class="text-center md:text-left">
-				<p class="text-gray-400 text-sm">
-					Copyright
+				<p class="text-gray-400 text-sm mb-1">
+					© {new Date().getFullYear()} Infinite. All rights reserved.
 				</p>
-				<p class="text-gray-400 text-sm">
-					Infinite
+				<p class="text-gray-500 text-xs">
+					Designed & Developed with passion
 				</p>
-				
 			</div>
 
 			<!-- Social Links -->
-			<div class="flex justify-center space-x-4">
+			<div class="flex justify-center space-x-3 sm:space-x-4">
 				{#each socialLinks as social}
 					<a
 						href={social.href}
 						class="social-link p-2 text-gray-400 hover:text-blue-400 hover:bg-gray-700 rounded-lg transition-all duration-300 hover:scale-110"
 						aria-label={social.label}
 					>
-						<svelte:component this={social.icon} size={20} />
+						<svelte:component this={social.icon} size={18} class="sm:w-5 sm:h-5" />
 					</a>
 				{/each}
 			</div>
 
-			<!-- Theme Toggle -->
-			<div class="flex justify-center md:justify-end items-center space-x-3">
-				<span class="text-gray-400 text-sm">
-					Dark / Light
-				</span>
-				<button
-					bind:this={toggleButton}
-					on:click={toggleTheme}
-					class="relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 {isDark ? 'bg-green-500 hover:bg-green-600' : 'bg-gray-600 hover:bg-gray-500'}"
-					aria-label="Toggle theme"
-					aria-pressed={isDark}
-				>
-					<span
-						class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 {isDark ? 'translate-x-6' : 'translate-x-1'}"
-					></span>
-					<div class="absolute inset-0 flex items-center justify-between px-1">
-						<Moon size={12} class="text-white" />
-						<Sun size={12} class="text-white" />
-					</div>
-				</button>
+			<!-- Quick Links -->
+			<div class="flex justify-center md:justify-end">
+				<p class="text-gray-400 text-sm">
+					Made with <span class="text-red-500 animate-pulse">❤</span> by Infinite
+				</p>
 			</div>
 		</div>
 	</div>

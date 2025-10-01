@@ -125,121 +125,124 @@
 	}
 </script>
 
-<section class="py-20 px-4 bg-gray-800/50">
-	<div class="container mx-auto max-w-6xl">
+<section id="contact" class="py-16 sm:py-20 lg:py-24 px-4">
+	<div class="container mx-auto max-w-6xl px-4">
 		<!-- Section Heading -->
-		<div class="text-center mb-16">
-			<h2 class="contact-title text-4xl font-bold text-white mb-4">
+		<div class="text-center mb-8 sm:mb-12 lg:mb-16">
+			<h2 class="contact-title text-3xl sm:text-4xl font-bold text-white mb-4">
 				Get In Touch
 				</h2>
-			<p class="contact-description text-gray-300 text-lg max-w-2xl mx-auto">
+			<p class="contact-description text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
 				Ready to work together? Let's discuss your next project and bring your ideas to life.
 				</p>
 			</div>
 
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
 			<!-- Contact Form -->
-			<div class="contact-form">
-				<form on:submit|preventDefault={handleSubmit} class="space-y-6">
+			<div class="contact-form w-full">
+				<form on:submit|preventDefault={handleSubmit} class="space-y-4 sm:space-y-6 w-full">
 					<div class="form-input">
-						<label for="name" class="block text-sm font-medium text-gray-300 mb-2">
+						<label for="name" class="block text-sm font-medium text-muted mb-2">
 							Full Name
 						</label>
 						<input
 							type="text"
 							id="name"
 							bind:value={name}
-							class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all duration-300"
+							class="w-full px-4 py-3 card-surface border border-default rounded-lg placeholder-gray-400 focus:outline-none focus-primary transition-all duration-300"
+							style="color: var(--text);"
 							placeholder="Your full name"
 							required
 						/>
 					</div>
 
 					<div class="form-input">
-						<label for="email" class="block text-sm font-medium text-gray-300 mb-2">
+						<label for="email" class="block text-sm font-medium text-muted mb-2">
 							Email Address
 						</label>
 						<input
 							type="email"
 							id="email"
 							bind:value={email}
-							class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all duration-300"
+							class="w-full px-4 py-3 card-surface border border-default rounded-lg placeholder-gray-400 focus:outline-none focus-primary transition-all duration-300"
+							style="color: var(--text);"
 							placeholder="your.email@example.com"
 							required
 						/>
 					</div>
 
 					<div class="form-input">
-						<label for="message" class="block text-sm font-medium text-gray-300 mb-2">
+						<label for="message" class="block text-sm font-medium text-muted mb-2">
 							Message
 						</label>
-							<textarea
-								id="message"
+						<textarea
+							id="message"
 							bind:value={message}
-								rows="5"
-							class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all duration-300 resize-none"
+							class="w-full px-4 py-3 card-surface border border-default rounded-lg placeholder-gray-400 focus:outline-none focus-primary transition-all duration-300 resize-none"
+							style="color: var(--text);"
 							placeholder="Tell me about your project..."
-								required
-							></textarea>
+							required
+						></textarea>
 					</div>
-							
-							<button
-								type="submit"
-						class="submit-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
-							>
-									<Send size={20} />
+
+					<button
+						type="submit"
+						class="submit-btn w-full text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+						style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));"
+					>
+						<Send size={20} />
 						<span>Send Message</span>
-							</button>
+					</button>
 				</form>
 			</div>
 
 			<!-- Contact Information -->
 			<div class="contact-info space-y-8">
 				<div class="space-y-6">
-					<h3 class="text-2xl font-bold text-white mb-6">
+					<h3 class="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">
 						Let's Connect
 					</h3>
 					
-					<div class="flex items-start space-x-4 p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-all duration-300">
-						<div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+					<div class="flex items-start space-x-4 p-4 card-surface rounded-lg card-hover transition-all duration-300">
+						<div class="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center" style="background-color: var(--color-primary);">
 							<Mail size={20} class="text-white" />
 						</div>
 						<div>
-							<h4 class="text-white font-semibold mb-1">Email</h4>
-							<p class="text-gray-300 text-sm">medicinfinite@gmail.com</p>
+							<h4 class="font-semibold mb-1" style="color: var(--text);">Email</h4>
+							<p class="text-muted text-sm">medicinfinite@gmail.com</p>
 						</div>
 					</div>
 
-					<div class="flex items-start space-x-4 p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-all duration-300">
-						<div class="flex-shrink-0 w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+					<div class="flex items-start space-x-4 p-4 card-surface rounded-lg card-hover transition-all duration-300">
+						<div class="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center" style="background-color: var(--color-accent);">
 							<Phone size={20} class="text-white" />
 						</div>
 						<div>
-							<h4 class="text-white font-semibold mb-1">Phone</h4>
-							<p class="text-gray-300 text-sm">+234 (810) 463-9067</p>
+							<h4 class="font-semibold mb-1" style="color: var(--text);">Phone</h4>
+							<p class="text-muted text-sm">+234 (810) 463-9067</p>
 						</div>
 					</div>
 
-					<div class="flex items-start space-x-4 p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition-all duration-300">
-						<div class="flex-shrink-0 w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
+					<div class="flex items-start space-x-4 p-4 card-surface rounded-lg card-hover transition-all duration-300">
+						<div class="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center" style="background-color: var(--color-secondary);">
 							<MapPin size={20} class="text-white" />
 						</div>
 						<div>
-							<h4 class="text-white font-semibold mb-1">Location</h4>
-							<p class="text-gray-300 text-sm">Oyo, Nigeria</p>
+							<h4 class="font-semibold mb-1" style="color: var(--text);">Location</h4>
+							<p class="text-muted text-sm">Oyo, Nigeria</p>
 						</div>
 					</div>
 				</div>
 
 				<!-- Call to Action -->
-				<div class="p-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-center">
+				<div class="p-6 rounded-lg text-center" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));">
 					<h4 class="text-white font-bold text-lg mb-2">
 						Ready to Start?
 					</h4>
-					<p class="text-blue-100 text-sm mb-4">
+					<p class="text-white/90 text-sm mb-4">
 						I'm always excited to work on new projects and collaborate with amazing people.
 					</p>
-					<button class="bg-white text-blue-600 font-semibold py-2 px-6 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105">
+					<button class="bg-white font-semibold py-2 px-6 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105" style="color: var(--color-primary);">
 						Schedule a Call
 					</button>
 				</div>

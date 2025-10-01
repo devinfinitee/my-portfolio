@@ -38,48 +38,47 @@
 	];
 </script>
 
-<section class="py-20 px-4">
-	<div class="container mx-auto max-w-4xl">
-		<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<section id="experience" class="py-16 sm:py-20 lg:py-24 px-4 bg-gray-800/50">
+	<div class="container mx-auto max-w-6xl px-4">
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
 			<!-- Experience Heading -->
 			<div class="lg:col-span-1">
-				<h2 class="text-4xl font-bold text-white mb-6">
+				<h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">
 					Work Experience
 				</h2>
-				<p class="text-gray-300 text-lg leading-relaxed">
+				<p class="text-gray-300 text-base sm:text-lg leading-relaxed">
 					My professional journey and contributions to various organizations
 				</p>
 			</div>
 
-			<!-- Timeline -->
-			<div class="lg:col-span-2 space-y-8">
+			<div class="lg:col-span-2 space-y-4 sm:space-y-6 lg:space-y-8">
 				{#each experiences as experience, index}
-					<div class="flex items-start space-x-4 group">
+					<div class="flex items-start space-x-3 sm:space-x-4 group">
 						<!-- Timeline dot -->
 						<div class="flex-shrink-0 mt-2">
-							<div class="w-4 h-4 bg-blue-600 rounded-full border-2 border-blue-400 group-hover:bg-blue-500 transition-colors"></div>
+							<div class="w-3 h-3 sm:w-4 sm:h-4 rounded-full border-2 transition-colors" style="background-color: var(--color-primary); border-color: var(--color-accent);"></div>
 						</div>
 						
 						<!-- Content -->
-						<div class="flex-1 bg-gray-700/50 rounded-lg p-6 hover:bg-gray-700/70 transition-all duration-300">
+						<div class="flex-1 card-surface rounded-lg p-4 sm:p-6 card-hover transition-all duration-300">
 							<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-								<h3 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+								<h3 class="text-lg sm:text-xl font-semibold transition-colors" style="color: var(--text);">
 									{experience.company}
 								</h3>
-								<div class="text-sm text-gray-400 mt-1 sm:mt-0">
+								<div class="text-sm text-muted mt-1 sm:mt-0">
 									{experience.duration}
 								</div>
 							</div>
 							
-							<div class="text-lg text-blue-400 font-medium mb-2">
+							<div class="text-lg font-medium mb-2" style="color: var(--color-primary);">
 								{experience.role}
 							</div>
 							
-							<div class="text-sm text-gray-400 mb-3">
+							<div class="text-sm text-muted mb-3">
 								📍 {experience.location}
 							</div>
 							
-							<p class="text-gray-300 text-sm leading-relaxed">
+							<p class="text-muted text-sm leading-relaxed">
 								{experience.description}
 							</p>
 						</div>

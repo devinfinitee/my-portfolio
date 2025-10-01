@@ -1,8 +1,47 @@
 @import 'tailwindcss';
 
+/* CSS Variables for theming */
+:root {
+	--color-primary: #3b82f6;
+	--color-secondary: #8b5cf6;
+	--color-accent: #06b6d4;
+	--color-complement: #f59e0b;
+	--font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--font-heading: 'Space Grotesk', 'Inter', sans-serif;
+
+	/* Light surfaces */
+	--surface-0: #f7fafc; /* page bg */
+	--surface-1: #ffffff; /* section bg */
+	--surface-2: #f1f5f9; /* card bg */
+	--border: #e2e8f0;
+	--text: #0f172a;
+	--muted: #475569;
+}
+
+/* Apply fonts */
+body {
+	font-family: var(--font-primary);
+	background: var(--surface-0);
+	color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-heading);
+}
+
+/* Dark theme override */
+.dark {
+	--surface-0: #0b1220;
+	--surface-1: #0f172a;
+	--surface-2: #111827;
+	--border: #1f2937;
+	--text: #e5e7eb;
+	--muted: #9ca3af;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-	width: 8px;
+	width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -10,17 +49,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #3b82f6;
-	border-radius: 4px;
+	background: var(--color-primary);
+	border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #2563eb;
+	background: var(--color-secondary);
 }
 
 /* Smooth scrolling */
 html {
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 /* Custom animations */
@@ -228,6 +268,24 @@ html {
 	}
 }
 
+@keyframes shimmer {
+	0% {
+		background-position: -1000px 0;
+	}
+	100% {
+		background-position: 1000px 0;
+	}
+}
+
+@keyframes gradient-shift {
+	0%, 100% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
 /* Apply enhanced animations */
 .animate-float {
 	animation: float 3s ease-in-out infinite;
@@ -247,4 +305,81 @@ html {
 
 .animate-bounce-in {
 	animation: bounce-in 1.5s ease-out;
+}
+
+.animate-shimmer {
+	animation: shimmer 2s linear infinite;
+}
+
+.animate-gradient {
+	background-size: 200% 200%;
+	animation: gradient-shift 3s ease infinite;
+}
+
+/* Utility classes for theme colors */
+.bg-primary {
+	background-color: var(--color-primary);
+}
+
+.bg-secondary {
+	background-color: var(--color-secondary);
+}
+
+.bg-accent {
+	background-color: var(--color-accent);
+}
+
+.text-primary {
+	color: var(--color-primary);
+}
+
+.text-secondary {
+	color: var(--color-secondary);
+}
+
+.text-accent {
+	color: var(--color-accent);
+}
+
+.border-primary {
+	border-color: var(--color-primary);
+}
+
+.border-secondary {
+	border-color: var(--color-secondary);
+}
+
+.border-accent {
+	border-color: var(--color-accent);
+}
+
+/* Theme-aware utilities */
+.bg-surface { background-color: var(--surface-1); }
+.section-surface { background-color: var(--surface-1); }
+.card-surface { background-color: var(--surface-2); border: 1px solid var(--border); }
+.card-hover:hover { background-color: color-mix(in oklab, var(--surface-2), var(--color-primary) 5%); }
+.border-default { border-color: var(--border); }
+.text-muted { color: var(--muted); }
+.bg-border { background-color: var(--border); }
+.text-default { color: var(--text); }
+
+/* Helpers for gradients using complement color */
+.from-primary { --tw-gradient-from: var(--color-primary); }
+.via-accent { --tw-gradient-via: var(--color-accent); }
+.via-complement { --tw-gradient-via: var(--color-complement); }
+.to-secondary { --tw-gradient-to: var(--color-secondary); }
+
+/* Focus utility using theme primary color */
+.focus-primary:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+/* Hover utilities for theme colors */
+.hover\:border-primary:hover {
+	border-color: var(--color-primary);
+}
+
+.hover\:text-primary:hover {
+	color: var(--color-primary);
 }

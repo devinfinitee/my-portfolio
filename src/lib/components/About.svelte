@@ -90,44 +90,44 @@
 	});
 </script>
 
-<section class="py-20 px-4 bg-gray-800/50">
-	<div class="container mx-auto max-w-4xl">
-		<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<section id="about" class="py-16 sm:py-20 lg:py-24 px-4 section-surface">
+	<div class="container mx-auto max-w-6xl px-4">
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
 			<!-- About Me Heading -->
 			<div class="lg:col-span-1">
-				<h2 class="about-title text-4xl font-bold text-white mb-6">
+				<h2 class="about-title text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">
 					About Me
 				</h2>
-				<p class="about-description text-gray-300 text-lg leading-relaxed">
+				<p class="about-description text-gray-300 text-base sm:text-lg leading-relaxed">
 					I'm a dedicated full-stack web developer with a passion for turning complex ideas into intuitive, high-performing web applications. My expertise spans the entire development lifecycle, from back-end architecture to front-end design, allowing me to build robust and scalable solutions from the ground up. I'm committed to leveraging modern technologies to craft exceptional user experiences and deliver clean, efficient, and innovative web solutions.
 				</p>
 			</div>
 
 			<!-- About Points -->
-			<div class="about-points lg:col-span-2 space-y-6">
+			<div class="about-points lg:col-span-2 space-y-4 sm:space-y-6">
 				{#each aboutPoints as point, index}
-					<div class="about-point flex items-start space-x-4 p-6 bg-gray-700/50 rounded-lg hover:bg-gray-700/70 transition-all duration-300 group">
-						<!-- Icon -->
-						<div class="flex-shrink-0 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-							{point.icon}
-						</div>
-						
-						<!-- Content -->
-						<div class="flex-1">
-							<h3 class="text-xl font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
-								{point.text}
-							</h3>
-							<p class="text-gray-300 text-sm">
-								{point.description}
-							</p>
-						</div>
-						
-						<!-- Arrow -->
-						<div class="flex-shrink-0 text-gray-400 group-hover:text-blue-400 transition-colors">
-							<ArrowRight size={20} />
-						</div>
+				<div class="about-point flex items-start space-x-3 sm:space-x-4 p-4 sm:p-6 card-surface rounded-lg card-hover transition-all duration-300 group">
+					<!-- Icon -->
+					<div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white font-bold text-base sm:text-lg" style="background-color: var(--color-primary);">
+						{point.icon}
 					</div>
-				{/each}
+					
+					<!-- Content -->
+					<div class="flex-1">
+						<h3 class="text-lg sm:text-xl font-semibold text-white mb-2 transition-colors" style="color: var(--text);">
+							{point.text}
+						</h3>
+						<p class="text-muted text-sm">
+							{point.description}
+						</p>
+					</div>
+					
+					<!-- Arrow -->
+					<div class="flex-shrink-0 text-muted group-hover:text-primary transition-colors">
+						<ArrowRight size={20} />
+					</div>
+				</div>
+			{/each}
 			</div>
 		</div>
 	</div>

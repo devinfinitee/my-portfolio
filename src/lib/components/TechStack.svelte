@@ -142,23 +142,23 @@
     });
 </script>
 
-<section class="py-20 px-4">
-    <div class="container mx-auto max-w-6xl">
+<section class="py-16 sm:py-20 lg:py-24 px-4 bg-gray-800/50">
+    <div class="container mx-auto max-w-6xl px-4">
         <!-- Section Heading -->
-        <div class="text-center mb-16">
-            <h2 class="tech-title text-4xl font-bold text-white mb-4">
-                Interactive Tech Stack
+        <div class="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 class="tech-title text-3xl sm:text-4xl font-bold text-white mb-4">
+                Tech Stack
             </h2>
-            <p class="tech-description text-gray-300 text-lg max-w-2xl mx-auto">
+            <p class="tech-description text-base sm:text-lg text-gray-300 max-w-2xl mx-auto">
                 Technologies and tools I use to build modern, scalable web applications
             </p>
         </div>
 
-        <!-- Tech Grid -->
-        <div class="tech-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Tech Grid (3 x 3 on large screens) -->
+        <div class="tech-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {#each technologies as tech}
                 <div class="tech-card group relative">
-                    <div class="relative p-6 bg-gray-800 rounded-xl hover:bg-gray-700 transition-all duration-300 cursor-pointer {tech.featured ? 'animate-glow' : ''}">
+                    <div class="relative p-4 sm:p-6 card-surface rounded-xl card-hover transition-all duration-300 cursor-pointer {tech.featured ? 'animate-glow' : ''}">
                         <!-- Background gradient for featured tech -->
                         {#if tech.featured}
                             <div class="absolute inset-0 bg-gradient-to-r {tech.color} opacity-10 rounded-xl"></div>
@@ -166,26 +166,26 @@
                        
                         <!-- Tech content -->
                         <div class="relative z-10 text-center">
-                            <div class="mb-3 flex justify-center {tech.featured ? 'animate-pulse' : ''}">
+                            <div class="mb-2 sm:mb-3 flex justify-center {tech.featured ? 'animate-pulse' : ''}">
                                 <img 
                                     src={tech.icon} 
                                     alt="{tech.name} icon" 
-                                    class="w-10 h-10 object-contain"
+                                    class="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                                     loading="lazy"
                                 />
                             </div>
-                            <h3 class="text-lg font-medium text-white group-hover:text-blue-400 transition-colors mb-3">
+                            <h3 class="text-sm sm:text-base lg:text-lg font-medium transition-colors mb-2 sm:mb-3" style="color: var(--text);">
                                 {tech.name}
                             </h3>
                            
                             <!-- Progress bar -->
-                            <div class="w-full bg-gray-700 rounded-full h-2 mb-2">
+                            <div class="w-full bg-border rounded-full h-1.5 sm:h-2 mb-1 sm:mb-2">
                                 <div
-                                    class="progress-bar h-2 rounded-full bg-gradient-to-r {tech.color}"
+                                    class="progress-bar h-1.5 sm:h-2 rounded-full bg-gradient-to-r {tech.color}"
                                     style="transform-origin: left; width: {tech.level}%"
                                 ></div>
                             </div>
-                            <span class="text-xs text-gray-400">{tech.level}%</span>
+                            <span class="text-xs text-muted">{tech.level}%</span>
                         </div>
 
                         <!-- Hover effect -->

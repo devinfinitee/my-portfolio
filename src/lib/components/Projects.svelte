@@ -4,48 +4,61 @@
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+	// TODO: Replace with your actual projects
 	const projects = [
 		{
-			title: 'Project',
-			description: 'A modern web application built with cutting-edge technologies and innovative design patterns.',
-			image: '👨‍💻',
-			rating: 4,
-			tech: ['React', 'Node.js', 'MongoDB']
-		},
-		{
-			title: 'Reacty',
-			description: 'Interactive dashboard with real-time data visualization and advanced analytics capabilities.',
-			image: '📊',
+			title: 'E-Commerce Platform',
+			description: 'A full-stack e-commerce solution with payment integration, inventory management, and real-time order tracking.',
+			image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=400&h=300&fit=crop',
 			rating: 5,
-			tech: ['React', 'TypeScript', 'D3.js']
+			tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+			link: '#',
+			github: '#'
 		},
 		{
-			title: 'Cloirts',
-			description: 'E-commerce platform with seamless payment integration and inventory management.',
-			image: '🛒',
-			rating: 4,
-			tech: ['Vue', 'Express', 'PostgreSQL']
-		},
-		{
-			title: 'Stalne',
-			description: 'Social media application with real-time messaging and content sharing features.',
-			image: '💬',
+			title: 'Task Management App',
+			description: 'Collaborative task management tool with real-time updates, team collaboration, and progress tracking.',
+			image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop',
 			rating: 5,
-			tech: ['Svelte', 'Socket.io', 'Redis']
+			tech: ['Vue.js', 'Firebase', 'Tailwind'],
+			link: '#',
+			github: '#'
 		},
 		{
-			title: 'DevTools',
-			description: 'Developer productivity suite with code analysis and performance monitoring tools.',
-			image: '🔧',
+			title: 'Social Media Dashboard',
+			description: 'Analytics dashboard for social media management with data visualization and automated reporting.',
+			image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop',
 			rating: 4,
-			tech: ['Electron', 'Node.js', 'WebAssembly']
+			tech: ['React', 'D3.js', 'Express'],
+			link: '#',
+			github: '#'
 		},
 		{
-			title: 'CloudSync',
-			description: 'Cross-platform file synchronization service with end-to-end encryption.',
-			image: '☁️',
+			title: 'Real Estate Portal',
+			description: 'Property listing platform with advanced search filters, virtual tours, and booking system.',
+			image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop',
 			rating: 5,
-			tech: ['React Native', 'AWS', 'DynamoDB']
+			tech: ['Next.js', 'PostgreSQL', 'AWS'],
+			link: '#',
+			github: '#'
+		},
+		{
+			title: 'Fitness Tracking App',
+			description: 'Mobile-first fitness application with workout plans, progress tracking, and nutrition guidance.',
+			image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=300&fit=crop',
+			rating: 4,
+			tech: ['React Native', 'Node.js', 'MongoDB'],
+			link: '#',
+			github: '#'
+		},
+		{
+			title: 'AI Chatbot Platform',
+			description: 'Intelligent chatbot solution with natural language processing and multi-channel integration.',
+			image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&h=300&fit=crop',
+			rating: 5,
+			tech: ['Python', 'TensorFlow', 'React'],
+			link: '#',
+			github: '#'
 		}
 	];
 
@@ -117,44 +130,49 @@
 	});
 </script>
 
-<section class="py-20 px-4 bg-gray-800/50">
-	<div class="container mx-auto max-w-6xl">
+<section id="projects" class="py-16 sm:py-20 lg:py-24 px-4">
+	<div class="container mx-auto max-w-6xl px-4">
 		<!-- Section Heading -->
-		<div class="mb-16">
-			<h2 class="projects-title text-4xl font-bold text-white mb-4">
+		<div class="mb-8 sm:mb-12 lg:mb-16">
+			<h2 class="projects-title text-3xl sm:text-4xl font-bold text-white mb-4">
 				Projects
 			</h2>
-			<p class="projects-description text-gray-300 text-lg max-w-2xl">
+			<p class="projects-description text-gray-300 text-base sm:text-lg max-w-2xl">
 				Showcase of my recent work and contributions to various projects
 			</p>
 		</div>
 
 		<!-- Projects Grid -->
-		<div class="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+		<div class="projects-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
 			{#each projects as project}
-				<div class="project-card group bg-gray-700 rounded-xl overflow-hidden hover:bg-gray-600 transition-all duration-300 cursor-pointer">
+				<div class="project-card group card-surface rounded-xl overflow-hidden card-hover transition-all duration-300 cursor-pointer">
 					<!-- Project Image -->
-					<div class="project-image h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-6xl">
-						{project.image}
+					<div class="project-image h-48 overflow-hidden" style="background-color: var(--surface-2);">
+						<img 
+							src={project.image} 
+							alt={project.title}
+							class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+							loading="lazy"
+						/>
 					</div>
 					
 					<!-- Project Content -->
-					<div class="p-6">
+					<div class="p-4 sm:p-6">
 						<div class="flex items-start justify-between mb-3">
-							<h3 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
+							<h3 class="text-lg sm:text-xl font-semibold transition-colors" style="color: var(--text);">
 								{project.title}
 							</h3>
-							<ExternalLink size={20} class="text-gray-400 group-hover:text-blue-400 transition-colors" />
+							<ExternalLink size={20} class="text-muted transition-colors" style="color: var(--color-primary);" />
 						</div>
 						
-						<p class="text-gray-300 text-sm mb-4 leading-relaxed">
+						<p class="text-muted text-sm mb-4 leading-relaxed">
 							{project.description}
 						</p>
 						
 						<!-- Tech Stack -->
 						<div class="flex flex-wrap gap-2 mb-4">
 							{#each project.tech as tech}
-								<span class="px-2 py-1 bg-blue-600/20 text-blue-400 text-xs rounded-full">
+								<span class="px-2 py-1 text-xs rounded-full" style="background-color: color-mix(in srgb, var(--color-primary) 20%, transparent); color: var(--color-primary);">
 									{tech}
 								</span>
 							{/each}
@@ -165,10 +183,11 @@
 							{#each Array(5) as _, i}
 								<Star 
 									size={16} 
-									class="transition-colors {i < project.rating ? 'text-yellow-400 fill-current' : 'text-gray-500'}" 
+									class="transition-colors {i < project.rating ? 'fill-current' : 'text-gray-500'}" 
+									style="{i < project.rating ? 'color: var(--color-accent);' : ''}"
 								/>
 							{/each}
-							<span class="text-gray-400 text-sm ml-2">
+							<span class="text-muted text-sm ml-2">
 								{project.rating}/5
 							</span>
 						</div>
