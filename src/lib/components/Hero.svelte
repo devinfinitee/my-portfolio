@@ -5,7 +5,7 @@
 	import TypingText from './TypingText.svelte';
 
 	const skills = ['Frontend', 'Backend', 'Design', 'DevOps'];
-	const techStack = ['React', 'Svelte', 'Node.js', 'TypeScript', 'Python', 'AWS'];
+	const techStack = ['React', 'Svelte', 'TypeScript', 'AWS', 'Express', 'Vue', 'MongoDB', 'Docker', 'GitHub'];
 
 	onMount(() => {
 		// Set initial states
@@ -190,7 +190,7 @@
 
 				<!-- Social Links -->
 				<div class="flex gap-4 justify-center lg:justify-start">
-					<a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hero-social p-3 card-surface text-muted rounded-lg hover:scale-110 transition-all duration-200 border border-default hover:border-primary" aria-label="GitHub">
+					<a href="https://github.com/devinfinitee" target="_blank" rel="noopener noreferrer" class="hero-social p-3 card-surface text-muted rounded-lg hover:scale-110 transition-all duration-200 border border-default hover:border-primary" aria-label="GitHub">
 						<Github size={22} />
 					</a>
 					<a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hero-social p-3 card-surface text-muted rounded-lg hover:scale-110 transition-all duration-200 border border-default hover:border-primary" aria-label="LinkedIn">

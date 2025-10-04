@@ -19,7 +19,7 @@
 		{ icon: Twitter, href: '#', label: 'Twitter' },
 		{ icon: Instagram, href: '#', label: 'Instagram' },
 		{ icon: Linkedin, href: '#', label: 'LinkedIn' },
-		{ icon: Github, href: '#', label: 'GitHub' },
+		{ icon: Github, href: 'https://github.com/devinfinitee', label: 'GitHub' },
 	];
 
 	function applyThemePreference(dark: boolean) {

@@ -6,19 +6,19 @@
 
 	const aboutPoints = [
 		{
-			icon: 'C',
-			text: 'Cenunma Bailit',
-			description: 'Passionate about creating innovative web solutions'
+			icon: 'F',
+			text: 'Front-End Development',
+			description: 'Crafting intuitive, high-performing user interfaces and experiences'
 		},
 		{
 			icon: 'B',
-			text: 'Biershare Dimitle',
-			description: 'Experienced in modern development frameworks'
+			text: 'Back-end Architecture',
+			description: 'Designing robust and scalable, efficient server-side solutions'
 		},
 		{
-			icon: 'A',
-			text: 'Asamıms Belis',
-			description: 'Focused on user experience and performance'
+			icon: 'T',
+			text: 'Technical Stack',
+			description: 'Leveraging modern technologies to deliver clean, innovative web solutions'
 		}
 	];
 

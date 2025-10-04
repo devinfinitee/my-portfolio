@@ -11,18 +11,18 @@
 			description: 'A full-stack e-commerce solution with payment integration, inventory management, and real-time order tracking.',
 			image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=400&h=300&fit=crop',
 			rating: 5,
-			tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-			link: '#',
-			github: '#'
+			tech: ['React', 'Tailwind', 'GSAP', 'Paystack'],
+			link: 'https://ecocartai.netlify.app',
+			github: 'https://github.com/devinfinitee'
 		},
 		{
-			title: 'Task Management App',
-			description: 'Collaborative task management tool with real-time updates, team collaboration, and progress tracking.',
-			image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop',
+			title: 'Jewish Learning Dashboard',
+			description: 'A responsive dashboard for structured Torah learning with progress tracking, daily goals, and interactive study modules.',
+			image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400&h=300&fit=crop',
 			rating: 5,
-			tech: ['Vue.js', 'Firebase', 'Tailwind'],
+			tech: ['React', 'TypeScript', 'GSAP', 'Tailwind'],
 			link: '#',
-			github: '#'
+			github: 'https://github.com/devinfinitee'
 		},
 		{
 			title: 'Social Media Dashboard',
@@ -31,7 +31,7 @@
 			rating: 4,
 			tech: ['React', 'D3.js', 'Express'],
 			link: '#',
-			github: '#'
+			github: 'https://github.com/devinfinitee'
 		},
 		{
 			title: 'Real Estate Portal',
@@ -40,16 +40,16 @@
 			rating: 5,
 			tech: ['Next.js', 'PostgreSQL', 'AWS'],
 			link: '#',
-			github: '#'
+			github: 'https://github.com/devinfinitee'
 		},
 		{
-			title: 'Fitness Tracking App',
-			description: 'Mobile-first fitness application with workout plans, progress tracking, and nutrition guidance.',
-			image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=300&fit=crop',
+			title: 'NewsStream Website',
+			description: 'A modern news aggregation platform with real-time updates, category filtering, and responsive design.',
+			image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=300&fit=crop',
 			rating: 4,
-			tech: ['React Native', 'Node.js', 'MongoDB'],
-			link: '#',
-			github: '#'
+			tech: ['React', 'NEWSAPI', 'Tailwind', 'GSAP'],
+			link: 'https://news-stream-zeta.vercel.app',
+			github: 'https://github.com/devinfinitee'
 		},
 		{
 			title: 'AI Chatbot Platform',
@@ -58,7 +58,7 @@
 			rating: 5,
 			tech: ['Python', 'TensorFlow', 'React'],
 			link: '#',
-			github: '#'
+			github: 'https://github.com/devinfinitee'
 		}
 	];
 
@@ -145,7 +145,7 @@
 		<!-- Projects Grid -->
 		<div class="projects-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
 			{#each projects as project}
-				<div class="project-card group card-surface rounded-xl overflow-hidden card-hover transition-all duration-300 cursor-pointer">
+				<a href={project.link} target="_blank" rel="noopener noreferrer" class="project-card group card-surface rounded-xl overflow-hidden card-hover transition-all duration-300 cursor-pointer block">
 					<!-- Project Image -->
 					<div class="project-image h-48 overflow-hidden" style="background-color: var(--surface-2);">
 						<img 
@@ -192,7 +192,7 @@
 							</span>
 						</div>
 					</div>
-				</div>
+				</a>
 			{/each}
 		</div>
 	</div>

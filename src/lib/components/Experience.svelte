@@ -1,39 +1,25 @@
 <script lang="ts">
 	const experiences = [
 		{
-			company: 'Eaosc Relky Maw',
-			role: 'Senior Full-Stack Developer',
-			duration: '2023 - Present',
-			location: 'San Francisco, CA',
-			description: 'Leading development of enterprise-scale web applications'
+			company: 'Frontend Development Foundation',
+			role: 'Frontend Development Foundation',
+			duration: '2021',
+			location: 'Osun State, Nigeria',
+			description: 'Mastered the core web technologies (HTML5, CSS3, JavaScript) and went ahead to learn several frameworks like Bootstrap, TailwindCSS, jQuery, React, Svelte, Vue. Developed several responsive interfaces focused on accessibility and clean design.'
 		},
 		{
-			company: 'Company Oad Fieelk',
-			role: 'Frontend Developer',
-			duration: '2021 - 2023',
-			location: 'New York, NY',
-			description: 'Built responsive user interfaces and interactive components'
+			company: 'Backend and Full Stack Transition',
+			role: 'Backend and Full Stack Transition',
+			duration: '2022',
+			location: 'Osun State, Nigeria',
+			description: 'Acquired proficiency in Node.js/Python and utilized Express and Node.js with other frameworks to design and implement robust, secure RESTful APIs and focused on database integration using MongoDB and data modelling.'
 		},
 		{
-			company: 'Tech Solutions Inc',
-			role: 'Backend Developer',
-			duration: '2019 - 2021',
-			location: 'Austin, TX',
-			description: 'Developed RESTful APIs and database architectures'
-		},
-		{
-			company: 'Startup Ventures',
-			role: 'Full-Stack Developer',
-			duration: '2017 - 2019',
-			location: 'Seattle, WA',
-			description: 'Built MVP products and scalable web applications'
-		},
-		{
-			company: 'Digital Agency',
-			role: 'Junior Developer',
-			duration: '2015 - 2017',
-			location: 'Los Angeles, CA',
-			description: 'Collaborated on client projects and learned modern frameworks'
+			company: 'Capstone Projects and Portfolio Building',
+			role: 'Capstone Projects and Portfolio Building',
+			duration: '2024 - Present',
+			location: 'Ogbomosho, Oyo State',
+			description: 'Building live production-ready web applications, leveraging a full MERN/MEVN stack and demonstrating the ability to architect and deploy scalable solutions from the initial concept to final deployment.'
 		}
 	];
 </script>
@@ -44,10 +30,10 @@
 			<!-- Experience Heading -->
 			<div class="lg:col-span-1">
 				<h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">
-					Work Experience
+					Development Milestones & skill acquisition
 				</h2>
 				<p class="text-gray-300 text-base sm:text-lg leading-relaxed">
-					My professional journey and contributions to various organizations
+					My professional journey and growth
 				</p>
 			</div>
 
