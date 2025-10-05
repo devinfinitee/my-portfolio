@@ -178,14 +178,14 @@
 
 				<!-- CTA Buttons -->
 				<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-					<button class="hero-cta group px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2">
+					<a href="#contact" class="hero-cta group px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2">
 						<span>Get In Touch</span>
 						<ArrowRight size={20} class="group-hover:translate-x-1 transition-transform" />
-					</button>
-					<button class="hero-cta px-6 py-3 bg-surface text-default rounded-lg font-semibold border border-default hover:border-primary transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2">
+					</a>
+					<a href="/Ogunlade Victor CV.pdf" download="Ogunlade_Victor_CV.pdf" class="hero-cta px-6 py-3 bg-surface text-default rounded-lg font-semibold border border-default hover:border-primary transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2">
 						<Download size={20} />
 						<span>Download CV</span>
-					</button>
+					</a>
 				</div>
 
 				<!-- Social Links -->
