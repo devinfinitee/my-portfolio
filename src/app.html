@@ -16,20 +16,29 @@
 		<script>
 			// Ensure dark mode is applied immediately to prevent flash
 			(function() {
-				const savedTheme = localStorage.getItem('theme');
-				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-				const shouldBeDark = savedTheme ? savedTheme === 'dark' : true; // Default to dark
-				
-				if (shouldBeDark) {
+				try {
+					const savedTheme = localStorage.getItem('theme');
+					const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+					const shouldBeDark = savedTheme ? savedTheme === 'dark' : true; // Default to dark
+					
+					if (shouldBeDark) {
+						document.documentElement.classList.add('dark');
+					} else {
+						document.documentElement.classList.remove('dark');
+					}
+					
+					// Set background color immediately to prevent white flash
+					document.documentElement.style.backgroundColor = shouldBeDark ? '#0b1220' : '#f7fafc';
+				} catch (e) {
+					// Fallback to dark mode if localStorage is not available
 					document.documentElement.classList.add('dark');
-				} else {
-					document.documentElement.classList.remove('dark');
+					document.documentElement.style.backgroundColor = '#0b1220';
 				}
 			})();
 		</script>
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover">
+	<body data-sveltekit-preload-data="hover" style="background-color: #0b1220; margin: 0; padding: 0;">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

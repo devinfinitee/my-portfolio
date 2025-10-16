@@ -24,7 +24,9 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
+		"@emailjs/browser": "^4.4.1",
 		"@types/gsap": "^1.20.2",
+		"emailjs": "^4.0.3",
 		"gsap": "^3.13.0",
 		"lucide-svelte": "^0.542.0"
 	}

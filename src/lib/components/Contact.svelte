@@ -1,12 +1,23 @@
 <script lang="ts">
-	import { Mail, Send, MapPin, Phone } from 'lucide-svelte';
+	import { Mail, Send, MapPin, Phone, MessageCircle } from 'lucide-svelte';
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import emailjs from '@emailjs/browser';
+	import { browser } from '$app/environment';
 
 	let name = '';
 	let email = '';
 	let message = '';
+	let isSubmitting = false;
+	let submitStatus: 'idle' | 'success' | 'error' = 'idle';
+	let statusMessage = '';
+
+	// Get environment variables
+	const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+	const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+	const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+	const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER;
 
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
@@ -100,7 +111,20 @@
 		});
 	});
 
-	function handleSubmit() {
+	async function handleSubmit() {
+		if (!browser) return;
+		
+		// Validate environment variables
+		if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+			submitStatus = 'error';
+			statusMessage = 'Email service not configured. Please check environment variables.';
+			return;
+		}
+
+		isSubmitting = true;
+		submitStatus = 'idle';
+		statusMessage = '';
+
 		// Animate submit button
 		const submitBtn = document.querySelector('.submit-btn');
 		gsap.to(submitBtn, {
@@ -111,17 +135,77 @@
 			ease: 'power2.inOut'
 		});
 
-		// Add ripple effect
-		gsap.to(submitBtn, {
-			boxShadow: '0 0 0 20px rgba(59, 130, 246, 0.3)',
-			duration: 0.3,
-			ease: 'power2.out',
-			yoyo: true,
-			repeat: 1
-		});
+		try {
+			// Send email using EmailJS
+			const templateParams = {
+				from_name: name,
+				from_email: email,
+				message: message,
+				to_name: 'Infinite'
+			};
 
-		// Handle form submission here
-		console.log('Form submitted:', { name, email, message });
+			await emailjs.send(
+				EMAILJS_SERVICE_ID,
+				EMAILJS_TEMPLATE_ID,
+				templateParams,
+				EMAILJS_PUBLIC_KEY
+			);
+
+			// Success animation
+			gsap.to(submitBtn, {
+				boxShadow: '0 0 0 20px rgba(34, 197, 94, 0.3)',
+				duration: 0.3,
+				ease: 'power2.out',
+				yoyo: true,
+				repeat: 1
+			});
+
+			submitStatus = 'success';
+			statusMessage = 'Message sent successfully! I\'ll get back to you soon.';
+			
+			// Reset form
+			name = '';
+			email = '';
+			message = '';
+
+			// Clear success message after 5 seconds
+			setTimeout(() => {
+				submitStatus = 'idle';
+				statusMessage = '';
+			}, 5000);
+
+		} catch (error) {
+			console.error('EmailJS Error:', error);
+			submitStatus = 'error';
+			statusMessage = 'Failed to send message. Please try again or contact me via WhatsApp.';
+
+			// Error animation
+			gsap.to(submitBtn, {
+				boxShadow: '0 0 0 20px rgba(239, 68, 68, 0.3)',
+				duration: 0.3,
+				ease: 'power2.out',
+				yoyo: true,
+				repeat: 1
+			});
+
+			// Clear error message after 5 seconds
+			setTimeout(() => {
+				submitStatus = 'idle';
+				statusMessage = '';
+			}, 5000);
+		} finally {
+			isSubmitting = false;
+		}
+	}
+
+	function openWhatsApp() {
+		if (!browser) return;
+		
+		const whatsappMessage = encodeURIComponent(
+			`Hi! I'm interested in discussing a project with you.`
+		);
+		const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER?.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
+		window.open(whatsappUrl, '_blank');
 	}
 </script>
 
@@ -185,14 +269,38 @@
 						></textarea>
 					</div>
 
+					<!-- Status Message -->
+					{#if statusMessage}
+						<div 
+							class="p-4 rounded-lg text-sm font-medium transition-all duration-300 {submitStatus === 'success' ? 'bg-green-500/20 text-green-400' : submitStatus === 'error' ? 'bg-red-500/20 text-red-400' : ''}"
+						>
+							{statusMessage}
+						</div>
+					{/if}
+
 					<button
 						type="submit"
-						class="submit-btn w-full text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+						disabled={isSubmitting}
+						class="submit-btn w-full text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
 						style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));"
 					>
 						<Send size={20} />
-						<span>Send Message</span>
+						<span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
 					</button>
+
+					<!-- WhatsApp Alternative -->
+					<div class="text-center">
+						<p class="text-muted text-sm mb-3">Or contact me directly via</p>
+						<button
+							type="button"
+							on:click={openWhatsApp}
+							class="inline-flex items-center space-x-2 px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105"
+							style="background: linear-gradient(135deg, #25D366, #128C7E);"
+						>
+							<MessageCircle size={20} />
+							<span>WhatsApp</span>
+						</button>
+					</div>
 				</form>
 			</div>
 
@@ -209,7 +317,7 @@
 						</div>
 						<div>
 							<h4 class="font-semibold mb-1" style="color: var(--text);">Email</h4>
-							<p class="text-muted text-sm">medicinfinite@gmail.com</p>
+							<a href ="mailto:medicinfinite@gmail.com" class="text-muted text-sm">medicinfinite@gmail.com</a>
 						</div>
 					</div>
 
@@ -242,9 +350,7 @@
 					<p class="text-white/90 text-sm mb-4">
 						I'm always excited to work on new projects and collaborate with amazing people.
 					</p>
-					<button class="bg-white font-semibold py-2 px-6 rounded-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105" style="color: var(--color-primary);">
-						Schedule a Call
-					</button>
+					
 				</div>
 			</div>
 		</div>
