@@ -25,21 +25,21 @@
 			github: 'https://github.com/devinfinitee'
 		},
 		{
-			title: 'Social Media Dashboard',
-			description: 'Analytics dashboard for social media management with data visualization and automated reporting.',
-			image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop',
+			title: 'Jetglide',
+			description: 'A premium private jet booking platform built for a client, featuring real-time flight tracking, luxury aircraft selection, and seamless booking experience.',
+			image: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=400&h=300&fit=crop',
 			rating: 4,
-			tech: ['React', 'D3.js', 'Express'],
-			link: '#',
+			tech: ['React', 'Tailwind'],
+			link: 'air-cambridge.vercel.app',
 			github: 'https://github.com/devinfinitee'
 		},
 		{
-			title: 'Real Estate Portal',
-			description: 'Property listing platform with advanced search filters, virtual tours, and booking system.',
-			image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop',
+			title: 'Finguard',
+			description: 'A comprehensive fintech application for personal finance management, featuring expense tracking, budget planning, investment monitoring, and financial insights.',
+			image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=300&fit=crop',
 			rating: 5,
-			tech: ['Next.js', 'PostgreSQL', 'AWS'],
-			link: '#',
+			tech: ['React', 'Tailwind', 'Express', 'NodeJS', 'MongoDB'],
+			link: 'finguard-three.vercel.app',
 			github: 'https://github.com/devinfinitee'
 		},
 		{
@@ -52,12 +52,12 @@
 			github: 'https://github.com/devinfinitee'
 		},
 		{
-			title: 'AI Chatbot Platform',
-			description: 'Intelligent chatbot solution with natural language processing and multi-channel integration.',
-			image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&h=300&fit=crop',
+			title: 'AI Health Platform',
+			description: 'An innovative AI-powered healthcare platform developed for a hackathon exhibition, featuring symptom analysis, health recommendations, and telemedicine integration.',
+			image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=300&fit=crop',
 			rating: 5,
-			tech: ['Python', 'TensorFlow', 'React'],
-			link: '#',
+			tech: ['React', 'Tailwind', 'Express', "MongoDB"],
+			link: 'https://ai-companion-nine.vercel.app',
 			github: 'https://github.com/devinfinitee'
 		}
 	];
