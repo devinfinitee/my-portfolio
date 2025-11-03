@@ -30,7 +30,7 @@
 			image: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=400&h=300&fit=crop',
 			rating: 4,
 			tech: ['React', 'Tailwind'],
-			link: 'air-cambridge.vercel.app',
+			link: 'https://air-cambridge.vercel.app',
 			github: 'https://github.com/devinfinitee'
 		},
 		{
@@ -39,7 +39,7 @@
 			image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&h=300&fit=crop',
 			rating: 5,
 			tech: ['React', 'Tailwind', 'Express', 'NodeJS', 'MongoDB'],
-			link: 'finguard-three.vercel.app',
+			link: 'https://finguard-three.vercel.app',
 			github: 'https://github.com/devinfinitee'
 		},
 		{
