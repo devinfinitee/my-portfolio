@@ -71,8 +71,7 @@
 			title: 'VCO attendance system',
 			description:
 				'Built to solve tracking of church attendees with quick check-ins, attendance history, and service insights.',
-			image:
-				'https://images.unsplash.com/photo-1509099836639-18ba02e2e1ba?auto=format&fit=crop&w=800&h=600&q=80',
+			image: 'https://source.unsplash.com/800x600/?church,congregation',
 			rating: 5,
 			tech: ['React', 'Tailwind', 'Express', 'MongoDB'],
 			link: 'https://vcoattendance.vercel.app',
